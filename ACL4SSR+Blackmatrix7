@@ -1,0 +1,105 @@
+[custom]
+;==================================================
+; Clash Verge Rev / Mihomo Meta
+; 多机场 + AI + Copilot 最终增强版
+; 保留原国家筛选正则结构
+; ACL4SSR（中国互联网）
+; Blackmatrix7（国际专项）
+;==================================================
+;==================================================
+; 广告拦截
+;==================================================
+ruleset=🛑 广告拦截,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+ruleset=🛑 广告拦截,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+;==================================================
+; 中国直连（ACL4SSR）
+;==================================================
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+ruleset=🌏 国内媒体,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
+ruleset=🎮 SteamCN,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+;==================================================
+; AI 服务（BM7）
+;==================================================
+ruleset=🤖 AI,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.list
+ruleset=🤖 AI,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.list
+ruleset=🤖 AI,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.list
+ruleset=🤖 AI,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.list
+;==================================================
+; GitHub / Microsoft / Google
+;==================================================
+ruleset=🐙 GitHub,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.list
+ruleset=Ⓜ️ Microsoft,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.list
+ruleset=🌍 Google,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list
+ruleset=📲 Telegram,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list
+;==================================================
+; Apple
+;==================================================
+ruleset=🍎 Apple,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+;==================================================
+; 流媒体
+;==================================================
+ruleset=🎬 YouTube,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list
+ruleset=🎬 Netflix,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list
+ruleset=🎬 Disney+,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list
+ruleset=🎬 Spotify,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list
+ruleset=🎬 TikTok,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.list
+;==================================================
+; GEOIP / FINAL
+;==================================================
+ruleset=🎯 全球直连,[]GEOIP,CN
+ruleset=🐟 漏网之鱼,[]FINAL
+;==================================================
+; 主代理组
+;==================================================
+custom_proxy_group=🚀 节点选择`select`[]🚀 手动切换`[]♻️ 自动选择`[]DIRECT`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🇺🇲 美国节点`[]🇰🇷 韩国节点
+custom_proxy_group=🚀 手动切换`select`^((?!(UnblockMusic|music|Music|网易云|云音乐|Netease|🎶|解锁)).)*$`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🇺🇲 美国节点`[]🇰🇷 韩国节点
+custom_proxy_group=♻️ 自动选择`url-test`^((?!(Expire|Traffic|流量|套餐|到期)).)*$`http://www.gstatic.com/generate_204`300,,50
+;==================================================
+; 国家节点组（保留增强正则）
+;==================================================
+custom_proxy_group=🇭🇰 香港节点`url-test`(港|香港|HK|Hong Kong|HongKong)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=🇨🇳 台湾节点`url-test`(台|台湾|TW|Taiwan)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=🇸🇬 狮城节点`url-test`(新加坡|狮城|SG|Singapore)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=🇯🇵 日本节点`url-test`(日本|东京|大阪|JP|Japan)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=🇺🇲 美国节点`url-test`(美|美国|波特兰|达拉斯|硅谷|西雅图|凤凰城|US|United States)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=🇰🇷 韩国节点`url-test`(韩|韩国|KR|Korea|KOR)`http://www.gstatic.com/generate_204`300,,50
+;==================================================
+; AI 专用组
+;==================================================
+custom_proxy_group=🤖 AI`select`[]🇺🇲 美国节点`[]🇸🇬 狮城节点`[]🚀 节点选择`[]♻️ 自动选择
+;==================================================
+; 国际服务组
+;==================================================
+custom_proxy_group=🐙 GitHub`select`[]🇺🇲 美国节点`[]🚀 节点选择`[]DIRECT
+custom_proxy_group=Ⓜ️ Microsoft`select`[]🇺🇲 美国节点`[]🚀 节点选择`[]DIRECT
+custom_proxy_group=🌍 Google`select`[]🇸🇬 狮城节点`[]🇺🇲 美国节点`[]🚀 节点选择
+custom_proxy_group=📲 Telegram`select`[]🚀 节点选择`[]♻️ 自动选择
+custom_proxy_group=🍎 Apple`select`[]DIRECT`[]🚀 节点选择
+;==================================================
+; 流媒体组
+;==================================================
+custom_proxy_group=🎬 YouTube`select`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🚀 节点选择
+custom_proxy_group=🎬 Netflix`select`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🇺🇲 美国节点`[]🚀 节点选择
+custom_proxy_group=🎬 Disney+`select`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🇺🇲 美国节点`[]🚀 节点选择
+custom_proxy_group=🎬 Spotify`select`[]🚀 节点选择`[]♻️ 自动选择
+custom_proxy_group=🎬 TikTok`select`[]🇺🇲 美国节点`[]🇯🇵 日本节点`[]🚀 节点选择
+;==================================================
+; 国内服务
+;==================================================
+custom_proxy_group=🌏 国内媒体`select`[]DIRECT`[]🚀 节点选择
+custom_proxy_group=🎮 SteamCN`select`[]DIRECT`[]🚀 节点选择
+;==================================================
+; 基础组
+;==================================================
+custom_proxy_group=🛑 广告拦截`select`[]REJECT`[]DIRECT
+custom_proxy_group=🎯 全球直连`select`[]DIRECT`[]🚀 节点选择
+custom_proxy_group=🐟 漏网之鱼`select`[]🚀 节点选择`[]♻️ 自动选择`[]DIRECT
+;==================================================
+; subconverter
+;==================================================
+enable_rule_generator=true
+overwrite_original_rules=true
